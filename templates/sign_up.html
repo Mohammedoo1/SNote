@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style> 
+  *{
+color-scheme:dark;    font-family: Arial, Helvetica, sans-serif;
+    
+  }
+    form{
+      border:none;
+      position: fixed;
+  top: 50%;           
+    left: 50%;                
+    transform: translate(-50%, -50%); 
+    width: 20%;
+height: 30%;
+ padding: 10%;     
+  border-radius: 100px;        
+background-color: rgba(0, 0, 0,0.3);  
+
+}
+button {
+font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: medium;
+  color: white;
+  font-family: Arial;
+  border: none;
+  background-color: transparent ;
+padding: 1vw; 
+
+
+}
+.inEm {
+  width: 100%;                 
+  padding: 7% 6%;      
+  border-radius: 30px;        
+  border: 3px solid #271b8f;     
+  background-color: rgba(38, 59, 136, 0.427); 
+  font-size: 16px;
+}
+
+
+button:hover{
+background-color: rgba(73, 90, 145, 0.1);
+
+}
+.bu{
+  margin-top:6%;
+}
+  </style>
+  <meta charset="UTF-8">
+  <title>signUp/ Register </title>
+</head>
+<body>
+  <center>
+    
+    
+  <form method="POST">
+<P>Enter your name :</P>
+<input name="name" class="inEm" type="text" placeholder="Name" required> 
+
+<P>Enter your password :</P>
+<input class="inEm" name="password"  type="password" placeholder="password" required> 
+
+<button class="bu"  type="submit">Next</button>
+<P>if you have accont </P>
+
+<a href="{{ url_for('signIn') }}">Login</a>
+
+  </form>
+
+    {% if msg %}
+<script>
+      let msg = "{{ msg|escape }}";
+      alert("{{ msg }}");
+
+</script>    
+    {% endif %}
+    
+
+</center>
+ 
+
+</body>
+</html>

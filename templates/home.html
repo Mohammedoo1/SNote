@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body> 
+    <header>
+        <nav>
+<a href="{{ url_for('note') }}">new note</a>
+
+        </nav>
+        {% if session.login %}
+
+<h1>Welcome {{ session.login }}</h1> 
+<form action="/logout"> <button type="submit"> logout</button></form>
+       {% endif %}
+    </header>
+    <center>
+
+    {% for note in notes %}
+    <p>{{ note[0] }}</p>
+{% endfor %}
+
+     </center>
+
+</body>
+</html>
